@@ -1,0 +1,13 @@
+{
+    "name": "View",
+    "alias": "view",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "HishabKitab\\View\\Providers\\ViewServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
