@@ -28,6 +28,7 @@ class ViewServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'database/migrations'));
+        $this->exportPublicAssets();
     }
 
     /**
@@ -108,5 +109,12 @@ class ViewServiceProvider extends ServiceProvider
             }
         }
         return $paths;
+    }
+
+    public function exportPublicAssets()
+    {
+        $this->publishes([
+            __DIR__.'/../public' => public_path('hishabkitab/engine'),
+        ], 'public');
     }
 }

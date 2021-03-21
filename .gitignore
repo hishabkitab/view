@@ -12,3 +12,9 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .idea
+/public/css/
+/public/data/
+/public/fonts/
+/public/images/
+/public/js/
+/public/vendor/
