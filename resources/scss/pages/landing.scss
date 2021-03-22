@@ -14,9 +14,9 @@
 @import "../bootstrap/mixins";
 
 // Bootsrap
-@import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/mixins";
 
 
 // Landing
@@ -161,7 +161,7 @@
   width: 200px;
   height: 200px;
   background-color: darken($color-brand-01, 5%);
-  background-image: url('../img/home-bg.png');
+  background-image: url(../../img/home-bg.png);
   background-size: cover;
   @include border-radius(20px);
   transform: rotate(30deg);

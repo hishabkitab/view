@@ -28,7 +28,7 @@ function serve() {
     });
 
     // Listen to change events on HTML and reload
-    watch('.public/**/*.html').on('change', htmlInjector);
+    watch('./public/**/*.html').on('change', htmlInjector);
 
     // Provide a callback to capture ALL events to CSS
     // files - then filter for 'change' and reload all
@@ -49,7 +49,7 @@ function serve() {
 function compileStyle() {
     return src('./resources/scss/dashforge.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./public/css/'))
+        .pipe(dest('./../../public/css/'))
         .pipe(bs.stream());
 }
 
@@ -58,7 +58,7 @@ function minifyStyle() {
     return src('./resources/scss/dashforge.scss')
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(rename({suffix: '.min'}))
-        .pipe(dest('./public/css/'))
+        .pipe(dest('./../../public/css/'))
         .pipe(bs.stream());
 }
 
@@ -66,7 +66,7 @@ function minifyStyle() {
 function compileSkinStyle() {
     return src('./resources/scss/skins/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./public/css/skins/'))
+        .pipe(dest('./../../public/css/skins/'))
         .pipe(bs.stream());
 }
 
@@ -74,7 +74,7 @@ function compileSkinStyle() {
 function compilePageStyle() {
     return src('./resources/scss/pages/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./public/css/pages/'))
+        .pipe(dest('./../../public/css/pages/'))
         .pipe(bs.stream());
 }
 
@@ -84,13 +84,13 @@ function npmDep() {
         .pipe(rename(function (path) {
             path.dirname = path.dirname.replace(/\/dist/, '').replace(/\\dist/, '');
         }))
-        .pipe(dest('./public/vendor/'));
+        .pipe(dest('./../../public/vendor/'));
 }
 
 //copy  fonts
 function copyFonts() {
     return src(['./resources/fonts/**/*'])
-        .pipe(dest('./public/fonts/'));
+        .pipe(dest('./../../public/fonts/'));
 }
 
 //copy images
@@ -102,13 +102,19 @@ function copyImages() {
 //copy images
 function copyData() {
     return src(['./resources/data/**/*'])
-        .pipe(dest('./public/data/'));
+        .pipe(dest('./../../public/data/'));
 }
 
 //copy images
 function copyJS() {
     return src(['./resources/js/**/*'])
-        .pipe(dest('./public/js/'));
+        .pipe(dest('./../../public/js/'));
+}
+
+function moveContent()
+{
+    return src(['./resources/images/**/*'])
+        .pipe(dest('./../../public/img/'));
 }
 
 //module exports
@@ -123,3 +129,4 @@ exports.compileSkin = parallel(compileSkinStyle, compilePageStyle);
 exports.releaseContent = parallel(copyImages,copyData,copyFonts,copyJS);
 exports.refresh = series(npmDep, copyImages, copyData, copyFonts, copyJS,
     compileStyle, minifyStyle, compileSkinStyle,compilePageStyle, serve);
+exports.production = moveContent;
