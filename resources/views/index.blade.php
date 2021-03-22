@@ -1,4 +1,4 @@
-@extends('view::layouts.app')
+@extends('view::layouts.web')
 
 @section('content')
     <h1>Hello World</h1>

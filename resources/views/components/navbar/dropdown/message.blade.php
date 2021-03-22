@@ -4,7 +4,14 @@
         <span>5</span>
     </a>
     <div class="dropdown-menu dropdown-menu-right">
-        <div class="dropdown-header">New Messages</div>
+        <div class="dropdown-header px-0 py-0 d-md-none">
+            <a href="" id="mailSidebar" class="burger-menu d-inline-flex d-md-none">
+                <i data-feather="arrow-left"></i>
+            </a>
+            <div class="navbar-brand d-inline-flex pt-0">
+                @yield('logo')
+            </div>
+        </div>
         <a href="" class="dropdown-item">
             <div class="media">
                 <div class="avatar avatar-sm avatar-online">

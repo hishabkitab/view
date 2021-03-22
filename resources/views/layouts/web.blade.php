@@ -2,9 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
-    @include('components.common.meta')
+    @include('view::components.common.meta')
 
-    @include('components.common.favicon')
+    @include('view::components.common.favicon')
 
     <title>@yield('title') | {{ config('app.name', 'Hishab Kitab') }}</title>
 
@@ -17,16 +17,16 @@
     <link rel="stylesheet" href="{{ asset('/css/dashforge.css') }}">
 
     <!--Theme CSS -->
-    @include('components.common.skin', ['skin' => 'light'])
+    @include('view::components.common.skin', ['skin' => 'light'])
 
 <!-- Page CSS-->
-    @include('components.common.page', ['page' => 'auth'])
+    @include('view::components.common.page', ['page' => 'auth'])
 <!-- overwrite CSS -->
     @stack('css')
 </head>
 <body class="mn-ht-100v d-flex flex-column">
 
-@include('partials.web.navbar')
+@include('view::partials.web.navbar')
 @yield('content')
 
 

@@ -263,8 +263,12 @@
                     left: 0;
                     margin-top: 0;
                     position: fixed;
+                    padding: 15px 20px;
 
                     .dropdown-header {
+                        margin-bottom: 15px;
+                        border-bottom: 0;
+
                         a {
                             margin-left: 0;
                         }
@@ -309,10 +313,15 @@
                     left: 0;
                     margin-top: 0;
                     position: fixed;
+                    padding: 15px 20px;
 
                     .dropdown-header {
+                        padding-bottom: 15px;
+                        border-bottom: 0;
+
                         a {
                             margin-left: 0;
+
                         }
                     }
                 }
@@ -340,6 +349,7 @@
                     left: 0;
                     margin-top: 0;
                     position: fixed;
+                    padding: 15px 20px;
                 }
 
                 .dropdown-header {
@@ -349,12 +359,16 @@
                 }
 
                 .dropdown-user {
-                    margin-top: calc(100vh / 10);
+                    margin-top: calc(100vh / 15);
                     text-align: center;
 
                     .avatar {
                         margin-left: auto;
                         margin-right: auto;
+                        @include media-breakpoint-down(sm) {
+                            width: 120px;
+                            height: 120px;
+                        }
                     }
 
                     @include media-breakpoint-up(sm) {
@@ -531,7 +545,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        font-size: 14px;
+        font-size: $font-size-lg;
         font-weight: $font-weight-medium;
         padding: 0 20px;
         color: $color-text-01;
@@ -590,10 +604,10 @@
 
     @include media-breakpoint-up(lg) {
         position: absolute;
-        top: 41.5px;
+        top: 44px;
         left: -25px;
         background-color: #fff;
-        padding: 20px 25px;
+        padding: 15px 20px;
         border: 1px solid rgba($color-ui-03, .53);
         margin-top: 0;
         margin-left: 0;
@@ -656,7 +670,7 @@
     .nav-sub-link {
         color: $color-text-02;
         white-space: nowrap;
-        font-size: 13px;
+        font-size: $font-size-md;
         display: flex;
         align-items: center;
         @include transition($transition-base);

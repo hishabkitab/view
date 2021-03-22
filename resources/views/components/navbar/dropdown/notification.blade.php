@@ -4,8 +4,16 @@
         <span>2</span>
     </a>
     <div class="dropdown-menu dropdown-menu-right">
-        <div class="dropdown-header">Notifications</div>
+        <div class="dropdown-header px-0 py-0 d-md-none">
+            <a href="" id="mailSidebar" class="burger-menu d-inline-flex d-md-none">
+                <i data-feather="arrow-left"></i>
+            </a>
+            <div class="navbar-brand d-inline-flex pt-0">
+                @yield('logo')
+            </div>
+        </div>
         <a href="" class="dropdown-item">
+            Notifications
             <div class="media">
                 <div class="avatar avatar-sm avatar-online"><img src="https://via.placeholder.com/350"
                                                                  class="rounded-circle" alt=""></div>
