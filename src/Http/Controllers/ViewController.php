@@ -1,6 +1,6 @@
 <?php
 
-namespace HishabKitab\View\src\Http\Controllers;
+namespace HishabKitab\View\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
