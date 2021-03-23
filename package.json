@@ -17,6 +17,7 @@
         "gulp-sass": "^4.0.2"
     },
     "dependencies": {
+        "@mdi/font": "^5.9.55",
         "@fortawesome/fontawesome-free": "^5.15.2",
         "animate.css": "^3.7.2",
         "bootstrap": "^4.4.1",
@@ -29,13 +30,14 @@
         "datatables.net-dt": "^1.10.19",
         "datatables.net-responsive": "^2.2.3",
         "datatables.net-responsive-dt": "^2.2.3",
-        "feather-icons": "^4.24.1",
+        "feather-icons": "^4.28.0",
         "flag-icon-css": "^3.3.0",
         "flot.curvedlines": "^1.1.1",
         "fullcalendar": "^3.10.1",
         "gmaps": "^0.4.24",
         "gulp-copy": "^4.0.1",
         "handlebars": "^4.7.3",
+        "imagesloaded": "^4.1.4",
         "inter-ui": "^3.9.0",
         "ion-rangeslider": "^2.3.0",
         "ionicons": "^4.6.3",
@@ -50,6 +52,8 @@
         "js-cookie": "^2.2.1",
         "leaflet": "^1.5.1",
         "lightslider": "^1.1.6",
+        "magnific-popup": "^1.1.0",
+        "masonry-layout": "^4.2.2",
         "moment": "^2.24.0",
         "morris.js": "github:morrisjs/morris.js",
         "node-sass": "^5.0.0",
@@ -62,8 +66,13 @@
         "quill": "^1.3.7",
         "raphael": "^2.3.0",
         "select2": "^4.0.9",
+        "slick-carousel": "^1.8.1",
         "spectrum-colorpicker": "^1.8.0",
         "typeahead.js": "^0.11.1",
-        "typicons.font": "^2.0.9"
+        "typicons.font": "^2.0.9",
+        "tilt.js": "^1.2.1",
+        "typed.js": "^2.0.11",
+        "waypoints": "^4.0.1",
+        "jquery.counterup": "^2.1.0"
     }
 }

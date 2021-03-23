@@ -96,7 +96,7 @@ function copyFonts() {
 //copy images
 function copyImages() {
     return src(['./resources/images/**/*'])
-        .pipe(dest('./public/images/'));
+        .pipe(dest('./../../public/images/'));
 }
 
 //copy images

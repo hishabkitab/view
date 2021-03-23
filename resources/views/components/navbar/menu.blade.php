@@ -1,82 +1,106 @@
 <ul class="nav navbar-menu">
     <li class="nav-label pd-l-20 pd-lg-l-25 d-lg-none">Main Navigation</li>
-    <li class="nav-item with-sub active">
-        <a href="" class="nav-link"><i data-feather="pie-chart"></i> Dashboard</a>
-        <ul class="navbar-menu-sub">
-            <li class="nav-sub-item"><a href="dashboard-one.html" class="nav-sub-link"><i
-                        data-feather="bar-chart-2"></i>Sales Monitoring</a></li>
-            <li class="nav-sub-item"><a href="dashboard-two.html" class="nav-sub-link"><i
-                        data-feather="bar-chart-2"></i>Website Analytics</a></li>
-            <li class="nav-sub-item"><a href="dashboard-three.html" class="nav-sub-link"><i
-                        data-feather="bar-chart-2"></i>Cryptocurrency</a></li>
-            <li class="nav-sub-item"><a href="dashboard-four.html" class="nav-sub-link"><i
-                        data-feather="bar-chart-2"></i>Helpdesk Management</a></li>
-        </ul>
+    <li class="nav-item">
+        <a href="{{ route('home') }}" class="nav-link">
+            <i data-feather="home"></i>
+            Home</a>
     </li>
     <li class="nav-item with-sub">
-        <a href="" class="nav-link"><i data-feather="package"></i> Apps</a>
-        <ul class="navbar-menu-sub">
-            <li class="nav-sub-item"><a href="app-calendar.html" class="nav-sub-link"><i
-                        data-feather="calendar"></i>Calendar</a></li>
-            <li class="nav-sub-item"><a href="app-chat.html" class="nav-sub-link"><i
-                        data-feather="message-square"></i>Chat</a></li>
-            <li class="nav-sub-item"><a href="app-contacts.html" class="nav-sub-link"><i
-                        data-feather="users"></i>Contacts</a></li>
-            <li class="nav-sub-item"><a href="app-file-manager.html" class="nav-sub-link"><i
-                        data-feather="file-text"></i>File Manager</a></li>
-            <li class="nav-sub-item"><a href="app-mail.html" class="nav-sub-link"><i data-feather="mail"></i>Mail</a>
-            </li>
-        </ul>
-    </li>
-    <li class="nav-item with-sub">
-        <a href="" class="nav-link"><i data-feather="layers"></i> Pages</a>
+        <a href="" class="nav-link"><i data-feather="layers"></i> Apps</a>
         <div class="navbar-menu-sub">
             <div class="d-lg-flex">
                 <ul>
-                    <li class="nav-label">Authentication</li>
-                    <li class="nav-sub-item"><a href="page-signin.html" class="nav-sub-link"><i
-                                data-feather="log-in"></i> Sign In</a></li>
-                    <li class="nav-sub-item"><a href="page-signup.html" class="nav-sub-link"><i
-                                data-feather="user-plus"></i> Sign Up</a></li>
-                    <li class="nav-sub-item"><a href="page-verify.html" class="nav-sub-link"><i
-                                data-feather="user-check"></i> Verify Account</a></li>
-                    <li class="nav-sub-item"><a href="page-forgot.html" class="nav-sub-link"><i
-                                data-feather="shield-off"></i> Forgot Password</a></li>
-                    <li class="nav-label mg-t-20">User Pages</li>
-                    <li class="nav-sub-item"><a href="page-profile-view.html" class="nav-sub-link"><i
-                                data-feather="user"></i> View Profile</a></li>
-                    <li class="nav-sub-item"><a href="page-connections.html" class="nav-sub-link"><i
-                                data-feather="users"></i> Connections</a></li>
-                    <li class="nav-sub-item"><a href="page-groups.html" class="nav-sub-link"><i
-                                data-feather="users"></i> Groups</a></li>
-                    <li class="nav-sub-item"><a href="page-events.html" class="nav-sub-link"><i
-                                data-feather="calendar"></i> Events</a></li>
+                    <li class="nav-label">Finance</li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.finance.accounting') }}">Accounting</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.finance.invoicing') }}">Invoicing</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.finance.expenses') }}">Expenses</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.finance.spreadsheet') }}">Spreadsheet (BI)</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.finance.documents') }}">Documents</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.finance.sign') }}">Sign</a></li>
+                    <li class="nav-label mg-t-20">Sales</li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.sales.crm') }}">CRM</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.sales.sales') }}">Sales</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.sales.point-of-sale-shop') }}">Point of Sale</a>
+                    </li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.sales.subscriptions') }}">Subscriptions</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.sales.rental') }}">Rental</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.sales.amazon-connector') }}">Amazon Connector</a>
+                    </li>
                 </ul>
                 <ul>
-                    <li class="nav-label">Error Pages</li>
-                    <li class="nav-sub-item"><a href="page-404.html" class="nav-sub-link"><i
-                                data-feather="file"></i> 404 Page Not Found</a></li>
-                    <li class="nav-sub-item"><a href="page-500.html" class="nav-sub-link"><i
-                                data-feather="file"></i> 500 Internal Server</a></li>
-                    <li class="nav-sub-item"><a href="page-503.html" class="nav-sub-link"><i
-                                data-feather="file"></i> 503 Service Unavailable</a></li>
-                    <li class="nav-sub-item"><a href="page-505.html" class="nav-sub-link"><i
-                                data-feather="file"></i> 505 Forbidden</a></li>
-                    <li class="nav-label mg-t-20">Other Pages</li>
-                    <li class="nav-sub-item"><a href="page-timeline.html" class="nav-sub-link"><i
-                                data-feather="file-text"></i> Timeline</a></li>
-                    <li class="nav-sub-item"><a href="page-pricing.html" class="nav-sub-link"><i
-                                data-feather="file-text"></i> Pricing</a></li>
-                    <li class="nav-sub-item"><a href="page-help-center.html" class="nav-sub-link"><i
-                                data-feather="file-text"></i> Help Center</a></li>
-                    <li class="nav-sub-item"><a href="page-invoice.html" class="nav-sub-link"><i
-                                data-feather="file-text"></i> Invoice</a></li>
+                    <li class="nav-label">Websites</li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.websites.website') }}">Website</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.websites.ecommerce') }}">eCommerce</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.websites.blog') }}">Blogs</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.websites.forums') }}">Forums</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.websites.live-chat') }}">Live Chat</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.websites.elearning') }}">eLearning</a></li>
+                    <li class="nav-label mg-t-20">Inventory &amp; MRP</li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.inventory&mrp.inventory') }}">Inventory</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.inventory&mrp.manufacturing') }}">Manufacturing</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.inventory&mrp.plm') }}">PLM</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.inventory&mrp.purchase') }}">Purchase</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.inventory&mrp.maintenance') }}">Maintenance</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.inventory&mrp.quality') }}">Quality</a></li>
+                </ul>
+                <ul>
+                    <li class="nav-label">Human Resources</li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.human-resources.employees') }}">Employees</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.human-resources.recruitment') }}">Recruitment</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.human-resources.time-off') }}">Time Off</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.human-resources.appraisals') }}">Appraisals</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.human-resources.referrals') }}">Referrals</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.human-resources.fleet') }}">Fleet</a></li>
+                    <li class="nav-label mg-t-20">Marketing</li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.marketing.social-marketing') }}">Social Marketing</a>
+                    </li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.marketing.email-marketing') }}">Email Marketing</a>
+                    </li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.marketing.sms-marketing') }}">SMS Marketing</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.marketing.events') }}">Events</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.marketing.marketing-automation') }}">Marketing
+                            Automation</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.marketing.surveys') }}">Surveys</a></li>
+                </ul>
+                <ul>
+                    <li class="nav-label">Services</li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.services.project') }}">Project</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.services.timesheet') }}">Timesheet</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.services.field-service') }}">Field Service</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.services.helpdesk') }}">Helpdesk</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.services.planning') }}">Planning</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.services.appointments') }}">Appointments</a></li>
+                    <li class="nav-label mg-t-20">Productivity</li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.productivity.discuss') }}">Discuss</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.productivity.approvals') }}">Approvals</a></li>
+                    <li class="nav-sub-item"><a class="nav-sub-link" href="{{ route('site.product.apps.productivity.iot') }}">IoT</a></li>
                 </ul>
             </div>
         </div><!-- nav-sub -->
     </li>
-    <li class="nav-item"><a href="../../components/" class="nav-link"><i data-feather="box"></i> Components</a>
+    <li class="nav-item with-sub">
+        <a href="" class="nav-link"><i data-feather="package"></i>Resources</a>
+        <ul class="navbar-menu-sub">
+            <li class="nav-sub-item"><a href="{{ route('site.resources.user-guide') }}" class="nav-sub-link">
+                    <i data-feather="calendar"></i>User Guides</a>
+            </li>
+            <li class="nav-sub-item"><a href="{{ route('site.resources.documentation') }}" class="nav-sub-link"><i
+                        data-feather="message-square"></i>Documentation</a></li>
+            <li class="nav-sub-item"><a href="{{ route('site.resources.api') }}" class="nav-sub-link"><i
+                        data-feather="users"></i>APIs</a></li>
+            <li class="nav-sub-item"><a href="{{ route('site.resources.developer-support') }}" class="nav-sub-link"><i
+                        data-feather="file-text"></i>Developers Support</a></li>
+            {{--            <li class="nav-sub-item"><a href="app-mail.html" class="nav-sub-link"><i data-feather="mail"></i></a>--}}
+            </li>
+        </ul>
     </li>
+    <li class="nav-item"><a href="{{ route('site.forum.index') }}" class="nav-link"><i data-feather="box"></i> Forum</a>
+    </li>
+    <li class="nav-item"><a href="{{ route('site.price.index') }}" class="nav-link"><i data-feather="archive"></i>
+            Price</a></li>
     <li class="nav-item"><a href="../../collections/" class="nav-link"><i data-feather="archive"></i>
-            Collections</a></li>
+            Store</a></li>
+    <li class="nav-item"><a href="../../collections/" class="nav-link"><i data-feather="archive"></i>
+            Contact</a></li>
+
 </ul>

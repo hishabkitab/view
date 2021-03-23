@@ -154,6 +154,17 @@
   }
 }
 
+.btn-outline-google {
+    background-color: transparent;
+    border-color: #db4a39;
+    color: #db4a39;
+
+    @include hover-focus() {
+        background-color: #db4a39;
+        border-color: #db4a39;
+        color: #fff;
+    }
+}
 // Uppercase button variant
 .btn-uppercase {
   text-transform: uppercase;

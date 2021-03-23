@@ -19,12 +19,12 @@
     <!--Theme CSS -->
     @include('view::components.common.skin', ['skin' => 'cool'])
 
-<!-- overwrite CSS -->
+    <!-- overwrite CSS -->
     @stack('css')
 </head>
-<body class="mn-ht-100v d-flex flex-column">
+<body class="home-body">
+@include('view::partials.web.site.navbar')
 
-@include('view::partials.web.navbar')
 @yield('content')
 
 
@@ -47,6 +47,7 @@
 </div>
 <!-- content -->
 --}}
+@include('view::partials.web.site.footer')
 
 <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
