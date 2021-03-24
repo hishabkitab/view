@@ -98,8 +98,8 @@
     </li>
     <li class="nav-item"><a href="{{ route('site.price.index') }}" class="nav-link"><i data-feather="archive"></i>
             Price</a></li>
-    <li class="nav-item"><a href="../../collections/" class="nav-link"><i data-feather="archive"></i>
-            Store</a></li>
+    <li class="nav-item"><a href="{{ route('site.events.index') }}" class="nav-link"><i data-feather="archive"></i>
+            Events</a></li>
     <li class="nav-item"><a href="../../collections/" class="nav-link"><i data-feather="archive"></i>
             Contact</a></li>
 

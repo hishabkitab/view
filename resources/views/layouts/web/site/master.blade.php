@@ -56,6 +56,7 @@
 @stack('script')
 
 <script src="{{ asset('/js/dashforge.js') }}"></script>
+
 @stack('js')
 
 </body>

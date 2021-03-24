@@ -132,3 +132,8 @@
     @include media-breakpoint-up(sm) { margin-top: 0; }
   }
 }
+
+.content-space {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+}
