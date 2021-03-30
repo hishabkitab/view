@@ -17,25 +17,28 @@
                     <div class="wd-100p">
                         <h3 class="tx-color-01 mg-b-5">Sign In</h3>
                         <p class="tx-color-03 tx-16 mg-b-40">Welcome back! Please signin to continue.</p>
-
-                        <div class="form-group">
-                            <label>Email address</label>
-                            <input type="email" class="form-control" placeholder="yourname@yourmail.com">
-                        </div>
-                        <div class="form-group">
-                            <div class="d-flex justify-content-between mg-b-5">
-                                <label class="mg-b-0-f">Password</label>
-                                <a href="{{ route('password.request') }}" class="tx-13">Forgot password?</a>
+                        <form action="{{ route('login') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" class="form-control" placeholder="yourname@yourmail.com">
                             </div>
-                            <input type="password" class="form-control" placeholder="Enter your password">
-                        </div>
-                        <button class="btn btn-brand-02 btn-block">Sign In</button>
+                            <div class="form-group">
+                                <div class="d-flex justify-content-between mg-b-5">
+                                    <label class="mg-b-0-f">Password</label>
+                                    <a href="{{ route('password.request') }}" class="tx-13">Forgot password?</a>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Enter your password">
+                            </div>
+                            <button class="btn btn-brand-02 btn-block">Sign In</button>
+                        </form>
                         <div class="divider-text">or</div>
                         <button class="btn btn-outline-facebook btn-block">Sign In With Facebook</button>
                         <button class="btn btn-outline-twitter btn-block">Sign In With Twitter</button>
                         <button class="btn btn-outline-google btn-block">Sign In With Google</button>
 
-                        <div class="tx-13 mg-t-20 tx-center">Don't have an account? <a href="{{ route('register') }}">Create an
+                        <div class="tx-13 mg-t-20 tx-center">Don't have an account? <a href="{{ route('register') }}">Create
+                                an
                                 Account</a></div>
                     </div>
                 </div><!-- sign-wrapper -->
