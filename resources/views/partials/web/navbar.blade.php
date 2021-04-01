@@ -1,5 +1,6 @@
 <header class="navbar navbar-header navbar-header-fixed">
     <a href="" id="mainMenuOpen" class="burger-menu"><i data-feather="menu"></i></a>
+    @stack('appMenus')
     <div class="navbar-brand">
         @include('view::components.navbar.logo')
         @yield('logo')

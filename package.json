@@ -1,5 +1,4 @@
 {
-    "old": "\r\n    \"private\": true,\r\n    \"scripts\": {\r\n        \"dev\": \"npm run development\",\r\n        \"development\": \"cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\",\r\n        \"watch\": \"cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\",\r\n        \"watch-poll\": \"npm run watch -- --watch-poll\",\r\n        \"hot\": \"cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js\",\r\n        \"prod\": \"npm run production\",\r\n        \"production\": \"cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js\"\r\n    },\r\n    \"devDependencies\": {\r\n        \"cross-env\": \"^7.0\",\r\n        \"laravel-mix\": \"^5.0.1\",\r\n        \"laravel-mix-merge-manifest\": \"^0.1.2\"\r\n    },\r\n    ",
     "name": "hishabtikab",
     "version": "1.0.0",
     "description": "UI Translation for hishab kitab.",
@@ -11,14 +10,15 @@
         "bs-html-injector": "^3.0.3",
         "gulp": "^4.0.2",
         "gulp-clean-css": "^4.2.0",
+        "gulp-copy": "^4.0.1",
         "gulp-imagemin": "^7.1.0",
         "gulp-npm-dist": "^1.0.3",
         "gulp-rename": "^1.4.0",
         "gulp-sass": "^4.0.2"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.3",
         "@mdi/font": "^5.9.55",
-        "@fortawesome/fontawesome-free": "^5.15.2",
         "animate.css": "^3.7.2",
         "bootstrap": "^4.4.1",
         "bootstrap-tagsinput": "^0.7.1",
@@ -35,7 +35,6 @@
         "flot.curvedlines": "^1.1.1",
         "fullcalendar": "^3.10.1",
         "gmaps": "^0.4.24",
-        "gulp-copy": "^4.0.1",
         "handlebars": "^4.7.3",
         "imagesloaded": "^4.1.4",
         "inter-ui": "^3.9.0",
@@ -46,6 +45,7 @@
         "jquery-sparkline": "^2.4.0",
         "jquery-steps": "^1.1.0",
         "jquery-ui-slider": "^1.12.1",
+        "jquery.counterup": "^2.1.0",
         "jquery.flot": "^0.8.3",
         "jquery.maskedinput": "^1.4.1",
         "jqvmap": "^1.0.1",
@@ -68,11 +68,10 @@
         "select2": "^4.0.9",
         "slick-carousel": "^1.8.1",
         "spectrum-colorpicker": "^1.8.0",
-        "typeahead.js": "^0.11.1",
-        "typicons.font": "^2.0.9",
         "tilt.js": "^1.2.1",
-        "typed.js": "^2.0.11",
-        "waypoints": "^4.0.1",
-        "jquery.counterup": "^2.1.0"
+        "typeahead.js": "^0.11.1",
+        "typed.js": "^2.0.12",
+        "typicons.font": "^2.0.9",
+        "waypoints": "^4.0.1"
     }
 }
