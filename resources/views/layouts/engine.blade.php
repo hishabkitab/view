@@ -30,6 +30,13 @@
         @yield('content')
     </div>
 </main>
+
+<!-- Global Vendor -->
+<script src="{{ asset('assets/vendors/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/vendors/jquery.migrate.min.js') }}"></script>
+<script src="{{ asset('assets/vendors/popper.min.js') }}"></script>
+<script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.min.js') }}"></script>
+
 @stack('script')
 
 @stack('js')
