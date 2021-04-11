@@ -2,7 +2,7 @@
 <nav class="js-navbar-scroll navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="home-page.html">
-            <img src="{{ asset('assets/img/logo-white.png') }}" alt="Stream UI Kit" style="width: 100px;">
+            <img src="{{ asset('/img/logo-white.png') }}" alt="Stream UI Kit" style="width: 100px;">
         </a>
 
         <button class="navbar-toggler" type="button"
@@ -26,7 +26,7 @@
                 <li class="nav-item dropdown mr-4 mb-2 mb-lg-0">
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        About <i class="fas fa-angle-down small ml-1"></i>
+                        About <i class="far fa-angle-down small ml-1"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="about-us.html">About Us</a>
@@ -46,16 +46,17 @@
                 @auth()
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle u-box-shadow-sm mr-2" width="35" height="35" src="assets/img-temp/ava/img3.jpg" alt="Htmlstream"> John Doe <i class="fas fa-angle-down small ml-1"></i>
+                        <img class="rounded-circle u-box-shadow-sm mr-2" width="35" height="35" src="/img/ava/img3.jpg" alt="Htmlstream"> John Doe <i class="fas fa-angle-down small ml-1"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Profile</a>
                         <a class="dropdown-item" href="#">Account Settings</a>
                         <a class="dropdown-item" href="#">Newsletter</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Sign Out</a>
+                        <a class="dropdown-item" href="#logoutModal" data-toggle="modal">Sign Out</a>
                     </div>
                 </li>
+                    @include('view::components.common.logout')
                 @else
                 <li class="nav-item mb-2 mb-lg-0">
                     <a class="nav-link" href="{{ route('login') }}">Join</a>

@@ -1,0 +1,141 @@
+// Bootstrap setup
+@import './node_modules/bootstrap/scss/functions';
+
+// Awesome setup
+@import 'admin/variables';
+
+// Custom setup
+@import 'admin/user-variables';
+
+// Bootstrap core
+@import './node_modules/bootstrap/scss/bootstrap';
+
+/*----------------------------------------------------------------------
+  * Awesome Dashobard UI - Responsive Website Template
+  * Copyright Htmlstream
+  * Licensed under MIT
+------------------------------------------------------------------------*/
+
+//
+// Mixins
+//
+
+@import "admin/mixins";
+
+//
+// Reboot
+//
+
+@import "admin/reboot/style";
+
+//
+// Grid
+//
+@import "admin/grid/grid";
+
+//
+// Components
+//
+
+// Accordion
+@import "admin/accordion/accordion";
+
+// Alert
+@import "admin/alert/alert";
+
+// Avatars
+@import "admin/avatar/avatar-sizes";
+
+// Badge
+@import "admin/badge/badge";
+@import "admin/badge/badge-sizes";
+
+// Blockquote
+@import "admin/blockquote/blockquote";
+
+// Buttons
+@import "admin/button/button";
+@import "admin/button/button-sizes";
+
+// Dropdowns
+@import "admin/dropdown/dropdown";
+
+// Cards
+@import "admin/cards/cards";
+
+//  Charts
+@import "admin/charts/charts-tooltips";
+
+// Close
+@import "admin/close/close";
+
+// Content
+@import "admin/content/content";
+
+// Dividers
+@import "admin/dividers/dividers";
+
+// Error
+@import "admin/error/error";
+
+// Footer
+@import "admin/footer/footer";
+
+// Forms
+@import "admin/form/form";
+@import "admin/form/select2";
+
+// Header
+@import "admin/header/header";
+@import "admin/header/header-search";
+
+@import "admin/header/header-error-page";
+
+// Icons
+@import "admin/icon/icon";
+@import "admin/icon/icon-sizes";
+
+// Indicators
+@import "admin/indicators/indicators";
+@import "admin/indicators/indicator-sizes";
+@import "admin/indicators/indicator-positions";
+
+// List Group
+@import "admin/list-group/list-group";
+
+// Nav Tabs
+@import "admin/nav/nav-tabs";
+
+// Pager
+@import "admin/pager/pager";
+
+// Pagination
+@import "admin/pagination/pagination";
+
+// Shapes
+@import "admin/shapes/shapes";
+
+// Sidebar
+@import "admin/sidebar/sidebar";
+@import "admin/sidebar/sidebar-tablet";
+@import "admin/sidebar/sidebar-desktop";
+@import "admin/sidebar/sidebar-menu";
+
+// Tables
+@import "admin/tables/tables";
+
+// Hero
+@import "admin/hero/hero-section";
+
+// Utilities
+@import "admin/utilities/text";
+@import "admin/utilities/sizing";
+@import "admin/utilities/line-height";
+@import "admin/utilities/links";
+@import "admin/utilities/other";
+
+// Vendor
+@import "admin/vendor/malihu-scrollbar";
+
+// Custom core
+@import 'admin/user';

@@ -4,22 +4,23 @@
 <head>
     <title>@yield('title', 'Index') | {!!  'Hishb Kitab' !!}</title>
 
-@include('view::components.common.meta')
+    @include('view::components.common.meta')
 
-@include('view::components.common.favicon')
+    @include('view::components.common.favicon')
 
-@include('view::components.common.webfont')
+    @include('view::components.common.webfont')
 
-<!-- Bootstrap Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.css') }}">
-<!-- Components Vendor Styles -->
-@stack('style')
+    <!-- Components Vendor Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
 
-<!-- Theme Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/styles.css') }}">
 
-<!-- Custom Overwrite CSS -->
-@stack('css')
+    @stack('style')
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/site.css') }}">
+
+    <!-- Custom Overwrite CSS -->
+    @stack('css')
 
 </head>
 <!-- End Head -->
@@ -39,12 +40,10 @@
 
 @include('view::partials.site-footer')
 
-<!-- JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) -->
 <!-- Global Vendor -->
-<script src="{{ asset('assets/vendors/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/jquery.migrate.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/popper.min.js') }}"></script>
-<script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('/vendor/jquery-migrate/jquery-migrate.min.js') }}"></script>
+<script src="{{ asset('/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Components Vendor  -->
 <script src="{{ asset('assets/vendors/jquery.parallax.js') }}"></script>
@@ -54,12 +53,12 @@
 <script src="{{ asset('assets/vendors/counters/counterup.min.js') }}"></script>
 
 <!-- Theme Settings and Calls -->
-<script src="{{ asset('assets/js/global.js') }}"></script>
+<script src="{{ asset('/js/global.js') }}"></script>
 
 <!-- Theme Components and Settings -->
-<script src="{{ asset('assets/js/vendors/parallax.js') }}"></script>
-<script src="{{ asset('assets/js/vendors/carousel.js') }}"></script>
-<script src="{{ asset('assets/js/vendors/counters.js') }}"></script>
+<script src="{{ asset('/js/vendors/parallax.js') }}"></script>
+<script src="{{ asset('/js/vendors/carousel.js') }}"></script>
+<script src="{{ asset('/js/vendors/counters.js') }}"></script>
 <!-- END JAVASCRIPTS -->
 
 <script>

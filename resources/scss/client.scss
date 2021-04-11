@@ -1,0 +1,130 @@
+// Bootstrap setup
+@import './node_modules/bootstrap/scss/functions';
+
+// Stream setup
+@import 'client/variables';
+
+// Custom setup
+@import 'client/user-variables';
+
+// Bootstrap core
+@import './node_modules/bootstrap/scss/bootstrap';
+
+/*----------------------------------------------------------------------
+  * Stream Dashboard UI- Responsive Website Template
+  * Copyright Htmlstream
+  * Licensed MIT
+------------------------------------------------------------------------*/
+
+//
+// Mixins
+//
+
+@import "client/mixins";
+
+//
+// Reboot
+//
+
+@import "client/reboot/style";
+
+//
+// Components
+//
+
+// Alert
+@import "client/alert/alert";
+
+// Apps
+@import "client/apps/apps";
+
+// Avatars
+@import "client/avatar/avatar";
+
+// Badge
+@import "client/badge/badge";
+
+// Buttons
+@import "client/buttons/buttons";
+
+// Cards
+@import "client/cards/cards";
+@import "client/cards/card-tabs-header";
+
+//  Charts
+@import "client/charts/charts-doughnuts";
+@import "client/charts/charts-tooltips";
+
+// Close
+@import "client/close/close";
+
+// Content
+@import "client/content/content";
+
+// Error
+@import "client/error/error";
+
+// Footer
+@import "client/footer/footer";
+
+// Forms
+@import "client/forms/forms";
+
+// Header
+@import "client/header/header";
+@import "client/header/header-search";
+@import "client/header/header-login";
+
+// Icons
+@import "client/icons/icons";
+
+// Indicators
+@import "client/indicators/indicators";
+@import "client/indicators/indicators-themes";
+@import "client/indicators/indicators-sizes";
+
+// Links
+@import "client/links/links";
+
+// List Group
+@import "client/list-group/list-group";
+
+// Pagination
+@import "client/pagination/pagination";
+
+// Profile
+@import "client/profile/profile";
+
+// Selects
+@import "client/selects/selects";
+
+// Shapes
+@import "client/shapes/shapes";
+
+// Sidebar
+@import "client/sidebar/sidebar";
+@import "client/sidebar/sidebar-mobile";
+@import "client/sidebar/sidebar-tablet";
+@import "client/sidebar/sidebar-desktop";
+@import "client/sidebar/sidebar-menu";
+
+// Tables
+@import "client/tables/tables";
+
+// Timelines
+@import "client/timelines/timelines";
+
+// Utilities
+@import "client/utilities/borders";
+@import "client/utilities/colors";
+@import "client/utilities/dividers";
+@import "client/utilities/font-size";
+@import "client/utilities/margins";
+@import "client/utilities/sizing";
+@import "client/utilities/z-index";
+
+// Vendor
+@import "client/vendor/malihu-scrollbar";
+
+// Custom core
+@import 'client/user';

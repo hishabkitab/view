@@ -1,0 +1,104 @@
+// Bootstrap setup
+@import './node_modules/bootstrap/scss/functions';
+
+// Docs UI Kit setup
+@import 'docs/variables';
+
+// Custom setup
+@import 'docs/user-variables';
+
+// Bootstrap core
+@import './node_modules/bootstrap/scss/bootstrap';
+
+/*----------------------------------------------------------------------
+  * Docs UI Kit - Responsive Website Template
+  * Copyright Htmlstream
+ * Licensed under MIT
+------------------------------------------------------------------------*/
+
+//
+// Mixins
+//
+
+@import "docs/mixins";
+
+//
+// Reboot
+//
+
+@import "docs/reboot/style";
+
+//
+// Components
+//
+
+// Accordion
+@import "docs/accordion/accordion";
+
+// Anchor
+@import "docs/anchor/anchor";
+
+// Breadcrumb
+@import "docs/breadcrumb/breadcrumb";
+
+// Button
+@import "docs/button/button";
+
+// Callout
+@import "docs/callout/callout";
+
+// Dropdown
+@import "docs/dropdown/dropdown";
+
+// Layout
+@import "docs/layout/layout";
+
+// List
+@import "docs/list/list";
+
+// Paginations
+@import "docs/paginations/paginations";
+
+// Progress
+@import "docs/progress/progress";
+
+// Promo
+@import "docs/promo/promo";
+
+// Form Controls
+@import "docs/forms/forms";
+
+// Go to Section
+@import "docs/go-to/go-to";
+
+// Icons
+@import "docs/icons/icon-block";
+@import "docs/icons/icon-svg";
+
+// Tabs
+@import "docs/tabs/tabs";
+
+// Utilities
+@import "docs/utilities/backgrounds";
+@import "docs/utilities/borders";
+@import "docs/utilities/colors";
+@import "docs/utilities/content-centered";
+@import "docs/utilities/gradients";
+@import "docs/utilities/links";
+@import "docs/utilities/opacity";
+@import "docs/utilities/position-spaces";
+@import "docs/utilities/sizing";
+@import "docs/utilities/text";
+@import "docs/utilities/transitions";
+@import "docs/utilities/z-index";
+
+// Vendors
+@import "docs/vendor/markup";
+@import "docs/vendor/scrollbar";
+@import "docs/vendor/ui-autocomplete";
+
+//Layout styles
+
+
+// Custom core
+@import 'docs/user';

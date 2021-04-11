@@ -1,132 +1,116 @@
-'use strict';
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    rename = require('gulp-rename'),
+    changed = require('gulp-changed'),
+    cssnano = require('gulp-cssnano'),
+    autoprefixer = require('gulp-autoprefixer'),
+    npmDist = require('gulp-npm-dist'),
+    uglify = require('gulp-uglify')
+;
 
-const gc = require('gulp-copy');
-const {src, dest, series, watch, parallel} = require('gulp');
-const sass = require('gulp-sass');
-const rename = require('gulp-rename');
-const bs = require('browser-sync').create();
-const npmDist = require('gulp-npm-dist');
-const htmlInjector = require('bs-html-injector');
-const imagemin = require('gulp-imagemin');
+// --------------------------------------------------
+// Copy resource media files to public folders
+// --------------------------------------------------
 
-sass.compiler = require('node-sass');
-
-
-// Start a server
-function serve() {
-    bs.use(htmlInjector, {
-        files: "./public/**/*.html"
-    });
-
-    // Now init the Browsersync server
-    bs.init({
-        injectChanges: true,
-        server: {
-            baseDir:"public",
-            index:"index.html"
-        }
-    });
-
-    // Listen to change events on HTML and reload
-    watch('./public/**/*.html').on('change', htmlInjector);
-
-    // Provide a callback to capture ALL events to CSS
-    // files - then filter for 'change' and reload all
-    // css files on the page.
-    watch('./resources/scss/**/*.scss', series(compileStyle, minifyStyle));
-
-    watch('./resources/scss/skins/**/*.scss', compileSkinStyle);
-    watch('./resources/scss/pages/*.scss', compilePageStyle);
-
-    watch(
-        ['./resources/scss/_variables.scss', './resources/scss/bootstrap/_variables.scss'],
-        series(compileStyle, compilePageStyle)
-    );
-
+function copyFiles() {
+    return gulp.src('./resources/media/**/*')
+        .pipe(gulp.dest('../../public/'));
 }
 
-// Compile scss files to style.css file
-function compileStyle() {
-    return src('./resources/scss/dashforge.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./../../public/css/'))
-        .pipe(bs.stream());
+// --------------------------------------------------
+// Compile website sass styles
+// --------------------------------------------------
+
+function compileSass() {
+    return gulp.src([
+        './resources/scss/admin.scss',
+        './resources/scss/client.scss',
+        './resources/scss/docs.scss',
+        './resources/scss/site.scss'
+    ])
+        .pipe(changed('../../public/css/'))
+        .pipe(sass({outputStyle: 'expanded'}))
+        .on('error', sass.logError)
+        .pipe(autoprefixer([
+            "last 1 major version",
+            ">= 1%",
+            "Chrome >= 45",
+            "Firefox >= 38",
+            "Edge >= 12",
+            "Explorer >= 10",
+            "iOS >= 9",
+            "Safari >= 9",
+            "Android >= 4.4",
+            "Opera >= 30"], {cascade: true}))
+        .pipe(gulp.dest('../../public/css/'));
 }
 
-// Compile and minify scss files to style.css file
-function minifyStyle() {
-    return src('./resources/scss/dashforge.scss')
-        .pipe(sass({outputStyle: 'compressed'}))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(dest('./../../public/css/'))
-        .pipe(bs.stream());
+// --------------------------------------------------
+// CSS minifier - minifies the below given lists
+// --------------------------------------------------
+
+function minifyCSS() {
+    return gulp.src([
+        '../../public/css/*.css',
+    ])
+        .pipe(cssnano())
+        .pipe(gulp.dest('../../public/css/'));
 }
 
-// Compile skins styles to css folder
-function compileSkinStyle() {
-    return src('./resources/scss/skins/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./../../public/css/skins/'))
-        .pipe(bs.stream());
+// --------------------------------------------------
+// Compile JS from resource folder
+// --------------------------------------------------
+
+function compileJS() {
+    return gulp.src('./resources/js/**/*')
+        .pipe(gulp.dest('../../public/js/'))
 }
 
-// Compile pages styles to css folder
-function compilePageStyle() {
-    return src('./resources/scss/pages/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./../../public/css/pages/'))
-        .pipe(bs.stream());
+// --------------------------------------------------
+// JS Uglifier - uglify the below given lists
+// --------------------------------------------------
+
+function uglifyJS() {
+    return gulp.src([
+        './public/js/*.js',
+    ])
+        .pipe(uglify())
+        .pipe(gulp.dest('../../public/js/'));
 }
 
-// Copy dependencies to public/vendor
-function npmDep() {
-    return src(npmDist(), {base: './node_modules/'})
+// --------------------------------------------------
+// Copy NPM Libraries to public/vendor folder
+// --------------------------------------------------
+
+function publishLib() {
+    return gulp.src(npmDist(), {base: './node_modules/'})
         .pipe(rename(function (path) {
             path.dirname = path.dirname.replace(/\/dist/, '').replace(/\\dist/, '');
         }))
-        .pipe(dest('./../../public/vendor/'));
+        .pipe(gulp.dest('../../public/vendor'));
 }
 
-//copy  fonts
-function copyFonts() {
-    return src(['./resources/fonts/**/*'])
-        .pipe(dest('./../../public/fonts/'));
-}
+// --------------------------------------------------
+// Exports objects for gulp public functions
+// --------------------------------------------------
 
-//copy images
-function copyImages() {
-    return src(['./resources/images/**/*'])
-        .pipe(dest('./../../public/images/'));
-}
+exports.sass = gulp.series(
+    copyFiles,
+    compileSass
+);
 
-//copy images
-function copyData() {
-    return src(['./resources/data/**/*'])
-        .pipe(dest('./../../public/data/'));
-}
+exports.javascript = gulp.series(
+    compileJS,
+    uglifyJS
+);
 
-//copy images
-function copyJS() {
-    return src(['./resources/js/**/*'])
-        .pipe(dest('./../../public/js/'));
-}
-
-function moveContent()
-{
-    return src(['./resources/images/**/*'])
-        .pipe(dest('./../../public/img/'));
-}
-
-//module exports
-exports.minifyStyle = minifyStyle;
-exports.compileSkinStyle = compileSkinStyle;
-exports.compilePageStyle = compilePageStyle;
-exports.serve = serve;
-exports.npmDep = npmDep;
-
-exports.compileStyle = parallel(compileStyle, minifyStyle);
-exports.compileSkin = parallel(compileSkinStyle, compilePageStyle);
-exports.releaseContent = parallel(copyImages,copyData,copyFonts,copyJS);
-exports.refresh = series(npmDep, copyImages, copyData, copyFonts, copyJS,
-    compileStyle, minifyStyle, compileSkinStyle,compilePageStyle, serve);
-exports.production = moveContent;
+exports.production = gulp.series(
+    copyFiles,
+    publishLib,
+    compileSass,
+    compileJS,
+    gulp.parallel(
+        minifyCSS,
+        uglifyJS
+    )
+);
