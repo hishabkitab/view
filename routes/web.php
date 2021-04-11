@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('view')->group(function() {
+Route::prefix('view')->group(function () {
     Route::get('/', 'ViewController@index');
 });

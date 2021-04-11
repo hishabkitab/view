@@ -2,25 +2,25 @@
 <html lang="en" class="no-js">
 <!-- Head -->
 <head>
-    <title>@yield('title', 'Index') | {!!  'Hishb Kitab' !!}</title>
+	<title>@yield('title', 'Index') | {!!  'Hishb Kitab' !!}</title>
 
-    @include('view::components.common.meta')
+@include('view::components.common.meta')
 
-    @include('view::components.common.favicon')
+@include('view::components.common.favicon')
 
-    @include('view::components.common.webfont')
+@include('view::components.common.webfont')
 
-    <!-- Components Vendor Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
+<!-- Components Vendor Styles -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
 
 
-    @stack('style')
+@stack('style')
 
-    <!-- Theme Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/site.css') }}">
-
-    <!-- Custom Overwrite CSS -->
-    @stack('css')
+<!-- Theme Styles -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('/css/site.css') }}">
+	
+	<!-- Custom Overwrite CSS -->
+	@stack('css')
 
 </head>
 <!-- End Head -->
@@ -28,14 +28,14 @@
 <body>
 <!-- Header -->
 <header>
-    @include('view::partials.site-nav')
-
-    @yield('promo-block')
+	@include('view::partials.site-nav')
+	
+	@yield('promo-block')
 </header>
 <!-- End Header -->
 
 <main role="main">
-    @yield('content')
+	@yield('content')
 </main>
 
 @include('view::partials.site-footer')

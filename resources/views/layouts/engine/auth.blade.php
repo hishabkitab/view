@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="no-js">
 <!-- Head -->
 <head>
-    <title>@yield('title', 'Index') | {!!  'Hishb Kitab' !!}</title>
+	<title>@yield('title', 'Index') | {!!  'Hishb Kitab' !!}</title>
 
 @include('view::components.common.meta')
 
@@ -10,15 +10,15 @@
 
 @include('view::components.common.webfont')
 
-    <!-- Components Vendor Styles -->
-    @notifyCss
+<!-- Components Vendor Styles -->
+	@notifyCss
 @stack('style')
 
 <!-- Theme Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/client.css') }}">
-
-    <!-- Custom Overwrite CSS -->
-    @stack('css')
+	<link rel="stylesheet" type="text/css" href="{{ asset('/css/client.css') }}">
+	
+	<!-- Custom Overwrite CSS -->
+	@stack('css')
 
 </head>
 <!-- End Head -->
