@@ -2,9 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="no-js">
 <!-- Head -->
 <head>
-	<title>@yield('title', 'Index') | {{ config('app.name', 'Hishab Kitab') }}</title>
-	
-	<!-- Required Meta Tags -->
+    <title>@yield('title', 'Index') | {{ config('app.name', 'Hishab Kitab') }}</title>
+
+    <!-- Required Meta Tags -->
 @include('view::components.meta')
 <!-- Favicon-->
 @include('view::components.favicon')
@@ -14,14 +14,14 @@
 <!-- Components Vendor Styles -->
 @stack('style')
 
-<!-- Notification Plugins Styles -->
-	@notifyCss
-	<!-- Module Styles -->
+<!-- Module Styles -->
 @yield('module-style')
 
+<!-- Notification Plugins Styles -->
+    @notify_css
 
-<!-- Custom Overwrite CSS -->
-	@stack('css')
+    <!-- Custom Overwrite CSS -->
+    @stack('css')
 
 </head>
 <!-- End Head -->
@@ -34,7 +34,9 @@
 <script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('/vendor/jquery-migrate/jquery-migrate.min.js') }}"></script>
 <script src="{{ asset('/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-@notifyJs
+
+<!-- Notification Plugins Scripts -->
+@notify_js
 
 <!-- Module Styles -->
 @yield('module-script')
@@ -44,6 +46,6 @@
 
 @stack('js')
 
-@include('notify::messages')
+@notify_render
 </body>
 </html>
