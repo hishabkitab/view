@@ -18,7 +18,7 @@
 @yield('module-style')
 
 <!-- Notification Plugins Styles -->
-    @notify_css
+   {{-- @notify_css--}}
 
     <!-- Custom Overwrite CSS -->
     @stack('css')
@@ -36,7 +36,7 @@
 <script src="{{ asset('/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Notification Plugins Scripts -->
-@notify_js
+{{--@notify_js--}}
 
 <!-- Module Styles -->
 @yield('module-script')
@@ -46,6 +46,6 @@
 
 @stack('js')
 
-@notify_render
+{{--@notify_render--}}
 </body>
 </html>
