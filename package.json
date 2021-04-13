@@ -45,6 +45,7 @@
         "slick-carousel": "^1.8.1",
         "throttle-debounce": "^2.1.0",
         "tilt.js": "^1.2.1",
+        "toastr": "^2.1.4",
         "typed.js": "^2.0.12",
         "waypoints": "^4.0.1"
     }

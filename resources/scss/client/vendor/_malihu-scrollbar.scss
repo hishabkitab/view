@@ -8,7 +8,7 @@
 
 .mCSB_scrollTools {
   z-index: 5;
-  width: 8px;
+  width: 15px;
   opacity: 0;
 
   .mCSB_draggerRail {
@@ -38,5 +38,11 @@
     & + .mCSB_scrollTools {
       left: 0;
     }
+  }
+}
+
+.mCSB_inside {
+  & > .mCSB_container {
+    margin-right: 0;
   }
 }

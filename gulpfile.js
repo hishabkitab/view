@@ -94,6 +94,7 @@ function publishLib() {
 // Exports objects for gulp public functions
 // --------------------------------------------------
 
+exports.style = compileSass;
 exports.sass = gulp.series(
     copyFiles,
     compileSass

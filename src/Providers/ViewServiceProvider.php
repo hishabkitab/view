@@ -57,8 +57,18 @@ class ViewServiceProvider extends ServiceProvider
         $this->publishes([
             module_path($this->moduleName, 'config/view.php') => config_path($this->moduleNameLower . '.php'),
         ], 'config');
+
         $this->mergeConfigFrom(
             module_path($this->moduleName, 'config/view.php'), $this->moduleNameLower
+        );
+
+        //breadcrumbs
+        $this->mergeConfigFrom(
+            module_path($this->moduleName, 'config/breadcrumbs.php'), 'breadcrumbs'
+        );
+//toastr notify
+        $this->mergeConfigFrom(
+            module_path($this->moduleName, 'config/notify.php'), 'notify'
         );
     }
 
@@ -106,6 +116,8 @@ class ViewServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(BladeServiceProvider::class);
+
     }
 
     /**

@@ -17,8 +17,8 @@
 <!-- Module Styles -->
 @yield('module-style')
 
-<!-- Notification Plugins Styles -->
-   {{-- @notify_css--}}
+<!-- Notification Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/toastr/build/toastr.min.css') }}">
 
     <!-- Custom Overwrite CSS -->
     @stack('css')
@@ -35,8 +35,8 @@
 <script src="{{ asset('/vendor/jquery-migrate/jquery-migrate.min.js') }}"></script>
 <script src="{{ asset('/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-<!-- Notification Plugins Scripts -->
-{{--@notify_js--}}
+<!-- Notification Scripts -->
+<script src="{{ asset('/vendor/toastr/build/toastr.min.js') }}"></script>
 
 <!-- Module Styles -->
 @yield('module-script')
@@ -44,8 +44,11 @@
 <!-- Components Vendor Scripts -->
 @stack('script')
 
+<!-- Notification Scripts -->
+@notify_render
+
+<!-- Custom JS -->
 @stack('js')
 
-{{--@notify_render--}}
 </body>
 </html>
